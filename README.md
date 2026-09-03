@@ -107,6 +107,32 @@ The Spark aggregation produced the following results:
 
 The processed datasets were successfully written to Amazon S3 in Apache Parquet format.
 
+## 📸 Screenshots
+
+### S3 Input Data
+
+Raw sales data stored in Amazon S3 before processing.
+
+![S3 Input Data](screenshots/s3-input.png)
+
+### PySpark Processing
+
+PySpark processes the sales data, calculates total sales, and performs the sales aggregation by category.
+
+![PySpark Processing](screenshots/spark-processing.png)
+
+### S3 Processed Data
+
+The transformed sales dataset is stored in Amazon S3 in Apache Parquet format with Snappy compression.
+
+![S3 Processed Data](screenshots/s3-output.png)
+
+### Sales by Category
+
+Aggregated sales results by category are stored separately in Amazon S3 in Apache Parquet format.
+
+![Sales by Category](screenshots/sales-by-category.png)
+
 ## Project Structure
 
 ```text
