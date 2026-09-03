@@ -21,25 +21,18 @@ The project reads raw sales data from Amazon S3, performs transformations and ag
 
 ## Architecture
 
-```text
-Amazon S3
-   │
-   │ raw/sales.csv
-   ▼
-Apache Spark
-   │
-   ├── Calculate total_amount
-   │
-   └── Aggregate sales by category
-   │
-   ▼
-Amazon S3
-   │
-   ├── processed/sales_parquet/
-   │
-   └── processed/sales_by_category/
+The following diagram illustrates the architecture and data flow of the AWS Spark Sales Pipeline using Amazon S3 and Amazon EMR Serverless with PySpark.
 
-   ```
+![AWS Spark Sales Pipeline Architecture](architecture/architecture.png)
+
+### Data Flow
+
+1. Raw sales data is provided as a CSV file.
+2. The CSV file is uploaded to Amazon S3 under the `raw/` prefix.
+3. Amazon EMR Serverless runs a PySpark application to process the data.
+4. The pipeline calculates `total_amount` and aggregates sales by category.
+5. Processed data is stored in Amazon S3 in Parquet format with Snappy compression.
+   
 
 ## AWS Services
 
